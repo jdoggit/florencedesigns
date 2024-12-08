@@ -1,0 +1,238 @@
+/* General Reset */
+body,
+h1,
+p,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #333;
+    animation: gradientMove 10s ease infinite; 
+}
+
+/* Header Section */
+.main-header {
+    height: 10vh;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-image {
+    background-image: url('images/Florence_footer.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 80px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.logo:hover {
+    transform: translateY(-50%) rotate(360deg);
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #ffcccb;
+    transform: translateY(-2px);
+}
+
+/* About Section */
+.about {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1E1E1E, #3C3C3C);
+    color: #DD3840;
+    padding: 10px;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.about h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #DD3840;
+    animation: bounce 1s ease-out;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 700px;
+    color: #f0f0f0;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #DD3840;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #B02A2A;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+/* Executives Section */
+.executives {
+    background: linear-gradient(135deg, #212121, #333); /* Grey-to-black gradient */
+    text-align: center;
+    padding: 50px 20px;
+    color: #f0f0f0; /* Light text for contrast */
+}
+
+.executives h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #DD3840;
+}
+
+/* Executive Boxes */
+.executive-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.executive-box {
+    width: 400px;
+    height: 250px;
+    background-color: #555555; /* Darker grey */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* For clickable box */
+    color: inherit; /* Inherit text color */
+}
+
+.executive-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Picture */
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    background-color: #DD3840; /* Florence Red */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure image stays inside circle */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Picture Image */
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fits nicely in the circle */
+    border-radius: 50%; /* Ensure image takes the shape of the circle */
+}
+
+/* Executive Name */
+.executive-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #dd3840;
+}
+/* Additional Styling for Executive Titles */
+.executive-title {
+    font-size: 1rem;
+    color: #ffffff; /* White */
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.executive-subtitle {
+    font-size: 0.9rem;
+    color: #ffffff; /* White */
+    margin-top: 2px;
+}
+
+/* Animations */
+@keyframes bounce {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
+}
+/* Keyframes for Background Animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
