@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolios - Florence Designs</title>
+
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Embedded CSS -->
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Base Body Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1E1E1E, #3C3C3C);
+      color: white;
+    }
+
+    /* Header Section */
+    .main-header {
+      height: 10vh;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-image {
+      background-image: url('images/Florence_footer.png');
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      width: 80px;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-50%) rotate(360deg);
+    }
+
+    /* Navigation Menu */
+    .navigation ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .navigation a:hover {
+      color: #ffcccb;
+      transform: translateY(-2px);
+    }
+
+    /* Page Content */
+    header {
+      text-align: center;
+      padding: 0;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #DD3840;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+    }
+
+    /* Portfolio Grid Section */
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Increase the min-width to create more space */
+      gap: 30px; /* Increased gap for more breathing space between cards */
+      padding: 30px 20px; /* Add padding around the grid */
+    }
+
+    /* Individual Portfolio Card Styling */
+    .portfolio-box {
+      background: #222;
+      border: 2px solid #444;
+      border-radius: 10px;
+      padding: 25px; /* Increased padding for spacing inside the card */
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box; /* Ensure padding is included in the total width */
+    }
+
+    .portfolio-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+      border-color: #DD3840;
+    }
+
+    .profile-picture {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      background-color: #555;
+      display: inline-block;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Popup and Overlay */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 800px; /* Increase width for bigger popup */
+      max-height: 80%; /* Limit max height */
+      background: #222;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #DD3840;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 1000;
+      overflow-y: auto; /* Allow scrolling */
+    }
+
+    .popup.active {
+      display: block;
+    }
+
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .popup-content {
+      padding-top: 20px;
+    }
+
+    .popup-divider {
+      height: 1px;
+      background-color: #444;
+      margin: 20px 0;
+    }
+
+    .work-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .work-images img {
+      width: 200px;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .work-images img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-image">
+      <img src="images/logo.png" alt="Logo" class="logo" onclick="window.location.href='index.html'">
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="https://discord.gg/S2BmBU5HG5">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header Section -->
+  <header>
+    <h1>Designer Portfolios</h1>
+    <p>Browse our talented designers and their work!</p>
+  </header>
+
+  <!-- Portfolio Grid Section -->
+  <div class="portfolio-container">
+    <!-- Portfolio Cards Will Be Dynamically Loaded Here -->
+  </div>
+
+  <!-- Popup & Overlay Section -->
+  <div class="overlay"></div>
+  <div class="popup">
+    <div class="popup-header">
+      <h2>Designer Name</h2>
+      <span class="close-popup">&times;</span>
+    </div>
+    <div class="popup-content">
+      <!-- Content will be dynamically inserted -->
+    </div>
+  </div>
+
+  <script>
+    const designers = [
+      {
+        username: "drollersteam13",
+        profilePicture: "https://cdn.discordapp.com/avatars/670235645599416320/ecd09e6bd8cbaa13a8e94f289aeda48b.png?size=512",
+        rank: "Senior Designer",
+        specialties: "Liveries",
+        averageReviews: "/5",
+        workImages: [
+          "",
+          ""
+        ]
+      },
+      {
+        username: "yopolice_yt",
+        profilePicture: "https://cdn.discordapp.com/avatars/668612549658279942/5279dfb54650fc435e1e2f5465280b8e.png?size=512",
+        rank: "Designer",
+        specialties: "Graphics, Discord Embeds",
+        averageReviews: "/5",
+        workImages: [
+          "https://cdn.discordapp.com/attachments/1314785936567046215/1314787339402350652/Untitled_design.png.png?ex=6759a7e1&is=67585661&hm=333aa654c90fa11ae59a5dc90bc4d36c606b1800f79aa6b3fb6ed1169113d8e8&",
+          "https://cdn.discordapp.com/attachments/1314785936567046215/1314787267805450320/IMG_3350.jpg?ex=6759a7d0&is=67585650&hm=abb8f064b2082bc10cd784d60ad7b255471ffd37e6d41963c751880dfc6f0a32&"
+        ]
+      },
+
+      {
+        username: "treysgoose",
+        profilePicture: "https://cdn.discordapp.com/avatars/620738158879047720/ae4b8ff5afbbf7aee494198c6a9c2d9e.png?size=512",
+        rank: "Executive/Designer",
+        specialties: "Clothing, Liveries",
+        averageReviews: "/5",
+        workImages: [
+          "https://cdn.discordapp.com/attachments/1312449620961656922/1312473561910345818/OPD_showcase.png?ex=6759cec1&is=67587d41&hm=461fb6cab84b7827a1658adfb1e3ec11f4ea0e2b65c4364497d906694384efd9&",
+          "https://cdn.discordapp.com/attachments/1312449620961656922/1312473498161254521/Tidal_showcase_PacSun.png?ex=6759ceb2&is=67587d32&hm=f9b40567426679deee5b572a17cf47e21ed91e0a7a398225ad000793ad976b9a&",
+          "https://cdn.discordapp.com/attachments/1312449620961656922/1312473539755901061/FHP_showcase.png?ex=6759cebc&is=67587d3c&hm=df9d73b88f4eb00ff27e1e7d91b22cd3b6b00e8477144c6ad6b61941621eecc5&"
+        ]
+      },
+      {
+        username: "tfnxyz",
+        profilePicture: "https://cdn.discordapp.com/avatars/1220099859101651049/660a95463d45c3957f0625a7ae45c658.png?size=512",
+        rank: "Designer",
+        specialties: "Photography, Videography/Editing, Discord Role Icons",
+        averageReviews: "/5",
+        workImages: [
+          "https://cdn.discordapp.com/attachments/1314772777240231996/1316197772885495849/48db3bb34ce91ab29d80c7c4f10ae96b.png?ex=675a2c32&is=6758dab2&hm=76b2c72d42be1e3f8dfaaf5f0c2f42cfee75dc0d10e8e84108a828b2c4ff6977&",
+          "https://cdn.discordapp.com/attachments/1314767327107223653/1314793754489786368/FLORENCE_SHOWCASE_CRP.mp4?ex=6759adda&is=67585c5a&hm=69dd3a8543affa4a535103f81a88ee30ebc7c19c4317cbd7f884afc15d1e3269&"
+        ]
+      },
+      {
+        username: "frosty._0",
+        profilePicture: "https://cdn.discordapp.com/avatars/879756350303920199/d69fec497280e7db651c36761261450a.png?size=512",
+        rank: "Executive/Designer",
+        specialties: "Photography, Discord Embeds",
+        averageReviews: "/5",
+        workImages: [
+          "https://cdn.discordapp.com/attachments/1011785789744615474/1269192997040427108/Screenshot_2024-08-03_031856.png?ex=6759e5d6&is=67589456&hm=222b7276a23ba671dec42412d9ad8f4de98179fcad2500e425a85e7b6af56ad8&",
+          "https://cdn.discordapp.com/attachments/1312472797943169124/1313632033716568178/image.png?ex=675a112a&is=6758bfaa&hm=80f3785f29c6cb3b010d5cda05ecd0234968a3e4055407bb21a1869cb02b1b0f&",
+          "https://cdn.discordapp.com/attachments/1011785789744615474/1250128463034187856/Screenshot_2024-06-09_190519.png?ex=6759c15b&is=67586fdb&hm=52557170ef43d051711a8eaeb2a865068a5630cd1bae102ef410c321123f2a0d&"
+        ]
+      },
+      {
+        username: "alex7617_11",
+        profilePicture: "https://cdn.discordapp.com/avatars/1258071058150326456/c67e87cf1e3d86a1891a9aad4264818e.png?size=512",
+        rank: "Designer",
+        specialties: "",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "valen0005",
+        profilePicture: "https://cdn.discordapp.com/avatars/825099504629448724/85fa3897f20e88bed67de499257ea40a.png?size=512",
+        rank: "Designer",
+        specialties: "Graphics, Discord Designs",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "southernboy7",
+        profilePicture: "https://cdn.discordapp.com/avatars/533796354477260842/8204ebb41e881843379292e1aa23a870.png?size=512",
+        rank: "Designer",
+        specialties: "ER:LC ELS Designs",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "zanevibes",
+        profilePicture: "https://cdn.discordapp.com/avatars/1199143161122001038/25250bccbca617c89d22f0ebd80af4ba.png?size=512",
+        rank: "Designer",
+        specialties: "Graphics",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "demon_slayer1",
+        profilePicture: "https://cdn.discordapp.com/avatars/1129210620248588349/331aa7e6544f4b5f02170c208849d8ba.png?size=512",
+        rank: "Designer",
+        specialties: "Graphics",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "idrxp_ghost",
+        profilePicture: "https://cdn.discordapp.com/avatars/774600668026503179/cea139a097700766d47b7e6ecca5293f.png?size=512",
+        rank: "Designer",
+        specialties: "Graphics, Discord Designs",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "kermit.is.scary",
+        profilePicture: "https://cdn.discordapp.com/avatars/904180407199760425/7cf17e006a3aae2f0fca544c2827d78a.png?size=512",
+        rank: "Designer",
+        specialties: "Clothing",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "anjuku132",
+        profilePicture: "https://cdn.discordapp.com/avatars/768073376056213524/c3d58f6ee261ce6519b19244822a4889.png?size=512",
+        rank: "Designer",
+        specialties: "Liveries",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "mcwhopper5267",
+        profilePicture: "https://cdn.discordapp.com/avatars/1035951176333660190/6c565b763ba3780d03a6a311cbdb6903.png?size=512",
+        rank: "Designer",
+        specialties: "Graphics",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "joku_kolli",
+        profilePicture: "https://cdn.discordapp.com/avatars/1201811535819980821/c8ca89dbfd3b4b8a2f9c053341e238f6.png?size=512",
+        rank: "Designer",
+        specialties: "Graphics",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "hcppyhere",
+        profilePicture: "https://cdn.discordapp.com/avatars/798293893975244851/0080d499d59f17abda6de9f6cfb0686b.png?size=512",
+        rank: "Designer",
+        specialties: "?",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "carteroo",
+        profilePicture: "https://cdn.discordapp.com/avatars/1061830563478114335/b6d2663d0af75147ca8dbd57b2a674a1.png?size=512",
+        rank: "Trial Designer",
+        specialties: "Discord Designs, ER:LC ELS Designs, Photography",
+        averageReviews: "/5",
+        workImages: [
+          "https://cdn.discordapp.com/attachments/1312472942235353168/1314093263296270357/Screenshot_2024-12-04_11.55.17_PM.png?ex=6759c478&is=675872f8&hm=928fff31ccdd9980232ba99a0c1fdf7833dd9bac3c3c5c8531deca6744bc0c45&",
+        ]
+      },
+      {
+        username: "clixy4real",
+        profilePicture: "https://cdn.discordapp.com/avatars/1209127055271272450/c737da692e140a6b47ebd271fb865529.png?size=512",
+        rank: "Trial Designer",
+        specialties: "Liveries",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "xdghost.13",
+        profilePicture: "https://cdn.discordapp.com/avatars/849341900526846042/b7aa81bbf95a03396e00fb01293125dc.png?size=512",
+        rank: "Trial Designer",
+        specialties: "Graphics, Discord Designs",
+        averageReviews: "/5",
+        workImages: [
+          "https://cdn.discordapp.com/attachments/1315015619846082692/1315015833361186846/Untitled_image_96.png?ex=6759d3ee&is=6758826e&hm=aaf5e7bf39655dcb0aa43728140bf4c843dce40c85be4af389295da23dce55a9&",
+          "https://cdn.discordapp.com/attachments/1315015619846082692/1315016720708141106/Untitled_image_75.png?ex=6759d4c2&is=67588342&hm=b68635001a869e43121aea2ef066f975672e4844f017dbd39394da2b7a54cae6&",
+          "https://cdn.discordapp.com/attachments/1315015619846082692/1315015829821063248/Untitled_image_-_2024-12-07T083405.781.png?ex=6759d3ed&is=6758826d&hm=e7e9ee618925c13f36f645576ec4c47cb42400850f8c0dfc9d0c55b43a112d66&",
+        ]
+      },
+      {
+        username: "evtea",
+        profilePicture: "https://cdn.discordapp.com/avatars/1053837519562748025/a_15b67bf3c0023085083779e8b4ef4f46.gif?size=512",
+        rank: "Trial Designer",
+        specialties: "Liveries",
+        averageReviews: "/5",
+        workImages: [
+          "images/work3.jpg",
+          "images/work4.jpg"
+        ]
+      },
+      {
+        username: "crazfxn",
+        profilePicture: "https://cdn.discordapp.com/avatars/1249832883947044940/816e3bfd0959f65003361d2c679205c2.png?size=512",
+        rank: "Trial Designer",
+        specialties: "Graphics, Discord Designs, ER:LC ELS Designs",
+        averageReviews: "/5",
+        workImages: [
+          "https://cdn.discordapp.com/attachments/1314786782071754772/1315512386748285050/DCI_banner_background_1.png?ex=6759a822&is=675856a2&hm=f1bd93a9de963ef80658cd8e859ea3a6dc46d6a49fe029bc66ea84a3f3a7c152&",
+          "https://cdn.discordapp.com/attachments/1314786782071754772/1315512563282214943/Screenshot_2024-12-08_214442.png?ex=6759a84c&is=675856cc&hm=c8e967c2ba966dcd96c88a09fb2071048b294466d1f1f08f2184b55d4d8fe543&"
+        ]
+      },
+    ];
+
+    const container = document.querySelector(".portfolio-container");
+    const popup = document.querySelector(".popup");
+    const overlay = document.querySelector(".overlay");
+    const popupHeader = popup.querySelector("h2");
+    const popupContent = popup.querySelector(".popup-content");
+    const closePopup = popup.querySelector(".close-popup");
+
+    designers.forEach(designer => {
+      const box = document.createElement('div');
+      box.classList.add('portfolio-box');
+      box.innerHTML = `
+        <div class="profile-picture" style="background-image: url(${designer.profilePicture})"></div>
+        <h3>${designer.username}</h3>
+        <p><strong>Title:</strong> ${designer.rank}</p>
+        <p><strong>Specialties:</strong> ${designer.specialties}</p>
+      `;
+      
+      // Add click event to open popup
+      box.addEventListener('click', () => {
+        popupHeader.textContent = designer.username;
+        popupContent.innerHTML = `
+          <p><strong>Average Reviews:</strong> ${designer.averageReviews}</p>
+          <br>
+          ${designer.workImages.map(img => `<img src="${img}" alt="${designer.username}'s work" style="width: 100%; margin-bottom: 10px;">`).join('')}
+        `;
+        popup.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      container.appendChild(box);
+    });
+
+    // Close popup logic
+    closePopup.addEventListener('click', () => {
+      popup.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+
+    overlay.addEventListener('click', () => {
+      popup.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
