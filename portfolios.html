@@ -189,6 +189,23 @@
     .work-images img:hover {
       transform: scale(1.05);
     }
+    /* Keyframe for slide-in animation */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(-50%) translateY(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(-50%);
+      }
+    }
+
+    /* Popup active class with animation */
+    .popup.active {
+      display: block;
+      animation: slideIn 0.1s ease-out;
+    }
   </style>
 </head>
 <body>
@@ -201,7 +218,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="portfolios.html">Portfolio</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="https://discord.gg/S2BmBU5HG5">Contact</a></li>
         </ul>
       </nav>
@@ -353,8 +370,13 @@
         specialties: "Graphics, Discord Designs",
         averageReviews: "/5",
         workImages: [
-          "images/work3.jpg",
-          "images/work4.jpg"
+          "https://cdn.discordapp.com/attachments/1316201210948354058/1316369324071587860/IMG_9111.png?ex=675acbf7&is=67597a77&hm=c96acade8f748801f276d239ce1ea1e1432c9934c44e00b333d3b374e4928268&",
+          "https://cdn.discordapp.com/attachments/1316201210948354058/1316369319873216542/IMG_9172.png?ex=675acbf6&is=67597a76&hm=a28d02e814bca75e310887448926c86c375cba909c6da0ac570716165e7889c5&",
+          "https://cdn.discordapp.com/attachments/1316201210948354058/1316369318920982588/IMG_9169.png?ex=675acbf6&is=67597a76&hm=e05281f1332849a2305074efd29dfa07386e56892afcf6b1eab8a0eb99e387a3&",
+          "https://cdn.discordapp.com/attachments/1316201210948354058/1316369320607092757/IMG_9149.png?ex=675acbf6&is=67597a76&hm=f9f3ca827e5c17e6b4eb704532ecbb438b721f2c046b7193c6cc5ccd83d1b660&",
+          "https://cdn.discordapp.com/attachments/1316201210948354058/1316369321492221973/IMG_9128.png?ex=675acbf7&is=67597a77&hm=17ff7b2383196fc2ff1733674c96e5ea73d37f67dfaf3ebdbb74fa7d6f4531f4&",
+          "https://cdn.discordapp.com/attachments/1316201210948354058/1316369318266798110/3_picture_banner.png?ex=675acbf6&is=67597a76&hm=80b35bd89d6057503051cbd3c8fdb04b2248b253e316b0b97fddb3b71375b2fa&",
+          "https://cdn.discordapp.com/attachments/1316201210948354058/1316369317738053663/TRP_Guidelines.jpg?ex=675acbf6&is=67597a76&hm=857a3551b8761010bb026dd386da8086a56c569f34bdae3dbc30d7263ea91881&"
         ]
       },
       {
@@ -364,8 +386,8 @@
         specialties: "Clothing",
         averageReviews: "/5",
         workImages: [
-          "images/work3.jpg",
-          "images/work4.jpg"
+          "https://cdn.discordapp.com/attachments/1312472714816000001/1316494840237658264/Screenshot_2024-12-11_150008.png?ex=675b40dd&is=6759ef5d&hm=7df434fc5ab86eb9f734c2149840b9a85653069b85b82adf6d9a2c44cdc2f9b2&",
+          "https://cdn.discordapp.com/attachments/1312472714816000001/1316494865286299729/Screenshot_2024-12-11_145933.png?ex=675b40e3&is=6759ef63&hm=12e75171b1f8e5bfe6d975ca66a4d1f5b54d7eecd0e10acc2f8379c9f8102356&"
         ]
       },
       {
@@ -440,9 +462,10 @@
         specialties: "Graphics, Discord Designs",
         averageReviews: "/5",
         workImages: [
-          "https://cdn.discordapp.com/attachments/1315015619846082692/1315015833361186846/Untitled_image_96.png?ex=6759d3ee&is=6758826e&hm=aaf5e7bf39655dcb0aa43728140bf4c843dce40c85be4af389295da23dce55a9&",
-          "https://cdn.discordapp.com/attachments/1315015619846082692/1315016720708141106/Untitled_image_75.png?ex=6759d4c2&is=67588342&hm=b68635001a869e43121aea2ef066f975672e4844f017dbd39394da2b7a54cae6&",
-          "https://cdn.discordapp.com/attachments/1315015619846082692/1315015829821063248/Untitled_image_-_2024-12-07T083405.781.png?ex=6759d3ed&is=6758826d&hm=e7e9ee618925c13f36f645576ec4c47cb42400850f8c0dfc9d0c55b43a112d66&",
+          "https://cdn.discordapp.com/attachments/1315015619846082692/1315015833361186846/Untitled_image_96.png?ex=675c76ee&is=675b256e&hm=dfe6f2188a753defffab6e1a831cb6c7622138c21ba9ef7ed873191ee5c0d198&",
+          "https://cdn.discordapp.com/attachments/1315015619846082692/1315015829821063248/Untitled_image_-_2024-12-07T083405.781.png?ex=675c76ed&is=675b256d&hm=dbdbee8fc3bad8c5be76ab7a732cc3c9d9d7d19deb41862007567ad828906130&",
+          "https://cdn.discordapp.com/attachments/1315015619846082692/1315016215055564932/Untitled_image_78.png?ex=675c7749&is=675b25c9&hm=b4da119cd607c4a4a1e6e41f6e1bdff3ce97e431b9a2c635af89137d7baada24&",
+          "https://cdn.discordapp.com/attachments/1315015619846082692/1315016720708141106/Untitled_image_75.png?ex=675c77c2&is=675b2642&hm=e13ac9203d56e256c908e1a286dabc573003cbfa2d9c85d6e8a0f9a5fb38c3c8&"
         ]
       },
       {
@@ -483,7 +506,7 @@
         <div class="profile-picture" style="background-image: url(${designer.profilePicture})"></div>
         <h3>${designer.username}</h3>
         <p><strong>Title:</strong> ${designer.rank}</p>
-        <p><strong>Specialties:</strong> ${designer.specialties}</p>
+        <p><strong>Specialties:</strong> <br>${designer.specialties}</p>
       `;
       
       // Add click event to open popup
@@ -514,7 +537,6 @@
   </script>
 </body>
 </html>
-
 
 
 
