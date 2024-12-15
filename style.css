@@ -49,10 +49,10 @@ body {
 .logo {
     position: absolute;
     top: 50%; /* Move halfway vertically */
-    left: 20px; /* Keep it inset from the left */
+    left: 15px; /* Keep it inset from the left */
     transform: translateY(-50%); /* Perfect vertical centering */
-    width: 80px; /* Adjusted size — slightly smaller than the header height */
-    height: auto; /* Maintain the aspect ratio */
+    width: 115px; /* Adjusted size — slightly smaller than the header height */
+    height: 115px; /* Maintain the aspect ratio */
     transition: transform 0.5s ease; /* Smooth hover effect */
 }
 
