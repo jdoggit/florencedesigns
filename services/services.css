@@ -40,20 +40,18 @@ body {
 /* Center the logo vertically within the header and make it slightly smaller */
 .logo {
   position: absolute;
-  top: 50%; /* Move halfway vertically */
-  left: 15px; /* Keep it inset from the left */
-  transform: translateY(-50%); /* Perfect vertical centering */
-  width: 115px; /* Adjusted size — slightly smaller than the header height */
-  height: 115px; /* Maintain the aspect ratio */
-  transition: transform 0.5s ease; /* Smooth hover effect */
+  top: 50%; 
+  left: 15px; 
+  transform: translateY(-50%); 
+  width: 115px; 
+  height: 115px; 
+  transition: transform 0.5s ease; 
 }
 
 /* Combine the vertical centering with a rotation effect */
 .logo:hover {
-  transform: translateY(-50%) rotate(360deg); /* Preserve centering and rotate */
+  transform: translateY(-50%) rotate(360deg); 
 }
-
-
 
 /* Navigation Menu */
 .navigation ul {
