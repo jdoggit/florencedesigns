@@ -89,6 +89,7 @@
       font-family: 'Poppins', sans-serif;
       font-size: 2.5rem;
       color: #DD3840;
+      animation: bounce 1s ease-out;
     }
 
     header p {
@@ -201,6 +202,18 @@
       to {
         opacity: 1;
         transform: translateY(-50%) translateX(-50%);
+      }
+    }
+    /* Animations */
+    @keyframes bounce {
+      0% {
+          transform: translateY(-10px);
+      }
+      50% {
+          transform: translateY(5px);
+      }
+      100% {
+          transform: translateY(0);
       }
     }
 
