@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8K83N0TMJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-X8K83N0TMJ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florence Designs</title>
+  <!-- Import Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Import particles.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  
+  <!-- Favicon Fix to prevent 404 error -->
+  <link rel="icon" href="images/Florence_logo3.png" type="image/png">
+  
+  <!-- Particles.js Styling -->
+  <style>
+    /* Ensure particles.js covers full viewport */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* Send particles effect behind other elements */
+      pointer-events: none;
+    }
+
+    /* Center content styling */
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Particles.js Background -->
+  <div id="particles-js"></div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-image">
+      <img src="images/Florence_logo3.png" alt="Logo" class="logo">
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolios.html">Portfolios</a></li>
+          <li><a href="https://discord.gg/S2BmBU5HG5">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main>
+    <section class="hero">
+      <h1>Welcome to Florence Designs!</h1>
+      <p>Creative solutions for your design needs. Join us today!</p>
+      <p class="description">Welcome to Florence Designs, a design server where we provide top-notch designs for your servers or recreational needs. We always ensure that you receive the best possible clothing for your personal needs.</p>
+      <div class="button-group">
+        <a href="services.html" class="cta-button">Explore Our Services</a>
+        <a href="https://discord.gg/S2BmBU5HG5" target="_blank" class="join-button">Join Our Community</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Florence Designs. All rights reserved.</p>
+  </footer>
+
+  <!-- Initialize particles.js with local particles.json -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log('Checking if particlesJS is loaded: ', typeof particlesJS);
+      
+      if (typeof particlesJS !== 'undefined') {
+        console.log('particlesJS is defined, initializing with local particles.json...');
+        particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+          console.log('Local particles configuration loaded!');
+        });
+      } else {
+        console.error('Error: particlesJS is not loaded!');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
