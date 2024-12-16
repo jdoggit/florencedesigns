@@ -36,7 +36,7 @@ main {
 }
 
 .header-image {
-  background-image: url('images/Florence_footer.png');
+  background-image: url('../images/Florence_footer.png');
   background-size: cover;
   height: 100%;
   display: flex;
