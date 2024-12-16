@@ -17,7 +17,7 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   background: linear-gradient(135deg, #121212, #333);
-  color: #ddd;
+  color: #333;
 }
 
 /* Main Wrapper */
@@ -59,33 +59,54 @@ main {
   transform: translateY(-50%) rotate(360deg);
 }
 
-/* Hero Section */
+/* Navigation Menu */
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #ffcccb;
+  transform: translateY(-2px);
+}
+
+/* Hero Section with Cool Visuals */
 .hero {
   height: 30vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-direction: column;
-  background: linear-gradient(135deg, #212121, #333);
+  background: linear-gradient(135deg, #1E1E1E, #3C3C3C);
   color: white;
-  padding: 20px;
+  padding: 10px;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  animation: gradientMove 10s ease infinite; 
 }
+
+
 
 .hero h1 {
   font-size: 3rem;
+  color:#DD3840;
 }
 
 .hero p {
   font-size: 1.1rem;
   max-width: 500px;
-}
-
-/* 200 Robux Red Text */
-.robux-red {
-  color: #e63946; /* Florence's signature red */
-  font-weight: bold;
-  font-size: 1.5rem;
 }
 
 /* Services Section - Moved to the bottom */
@@ -142,18 +163,15 @@ footer {
   padding: 15px 0;
   font-size: 0.9rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Animations */
+@keyframes bounce {
+  0% {
+      transform: translateY(-10px);
+  }
+  50% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
