@@ -10,22 +10,13 @@ a {
   box-sizing: border-box;
 }
 
-/* Base Page Styling */
-html,
+/* Base Styling */
 body {
-  height: 100%;
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background: linear-gradient(135deg, #121212, #333);
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
   color: #333;
-}
-
-/* Main Wrapper */
-main {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between; /* Space hero and services vertically */
+  animation: gradientMove 10s ease infinite; 
 }
 
 /* Header Section */
@@ -38,6 +29,7 @@ main {
 .header-image {
   background-image: url('../images/Florence_footer.png');
   background-size: cover;
+  background-position: center;
   height: 100%;
   display: flex;
   align-items: center;
@@ -45,19 +37,23 @@ main {
   padding-right: 20px;
 }
 
+/* Center the logo vertically within the header and make it slightly smaller */
 .logo {
   position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  width: 115px;
-  height: 115;
-  transition: transform 1s ease;
+  top: 50%; /* Move halfway vertically */
+  left: 15px; /* Keep it inset from the left */
+  transform: translateY(-50%); /* Perfect vertical centering */
+  width: 115px; /* Adjusted size — slightly smaller than the header height */
+  height: 115px; /* Maintain the aspect ratio */
+  transition: transform 0.5s ease; /* Smooth hover effect */
 }
 
+/* Combine the vertical centering with a rotation effect */
 .logo:hover {
-  transform: translateY(-50%) rotate(360deg);
+  transform: translateY(-50%) rotate(360deg); /* Preserve centering and rotate */
 }
+
+
 
 /* Navigation Menu */
 .navigation ul {
@@ -81,9 +77,9 @@ main {
   transform: translateY(-2px);
 }
 
-/* Hero Section with Cool Visuals */
+/* Hero Section */
 .hero {
-  height: 30vh;
+  height: 34vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,11 +93,9 @@ main {
   animation: gradientMove 10s ease infinite; 
 }
 
-
-
 .hero h1 {
   font-size: 3rem;
-  color:#DD3840;
+  color: #DD3840;
 }
 
 .hero p {
@@ -109,7 +103,7 @@ main {
   max-width: 500px;
 }
 
-/* Services Section - Moved to the bottom */
+/* Services Section */
 .services-section {
   padding: 20px 0;
   background: linear-gradient(135deg, #212121, #333);
@@ -158,11 +152,12 @@ main {
 /* Footer Section */
 footer {
   text-align: center;
-  background-color: #121212;
-  color: #ddd;
-  padding: 15px 0;
+  padding: 15px 10px;
+  background-color: #333;
+  color: white;
   font-size: 0.9rem;
 }
+
 /* Animations */
 @keyframes bounce {
   0% {
@@ -173,5 +168,18 @@ footer {
   }
   100% {
       transform: translateY(0);
+  }
+}
+
+/* Keyframes for Background Animation */
+@keyframes gradientMove {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
   }
 }
