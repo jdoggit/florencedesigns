@@ -90,6 +90,7 @@ body {
     margin-bottom: 20px;
     color: #DD3840;
     animation: bounce 1s ease-out;
+    animation: colorPulse 3s ease-in-out infinite;
 }
 
 .about p {
@@ -234,5 +235,18 @@ footer {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* Keyframes for Color Pulse */
+@keyframes colorPulse {
+    0% {
+        text-shadow: 0 0 5px #DD3840, 0 0 10px #DD3840, 0 0 15px #DD3840;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff6666, 0 0 20px #ff6666, 0 0 30px #ff6666;
+    }
+    100% {
+        text-shadow: 0 0 5px #DD3840, 0 0 10px #DD3840, 0 0 15px #DD3840;
     }
 }
