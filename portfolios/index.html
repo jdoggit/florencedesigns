@@ -89,7 +89,7 @@
       font-family: 'Poppins', sans-serif;
       font-size: 2.5rem;
       color: #DD3840;
-      animation: bounce 1s ease-out;
+      animation: waveMotion 6s ease-in-out infinite; 
     }
 
     header p {
@@ -214,6 +214,15 @@
       }
       100% {
           transform: translateY(0);
+      }
+    }
+    /* Wave Motion Animation */
+    @keyframes waveMotion {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-4px);
       }
     }
 
